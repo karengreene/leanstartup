@@ -1,0 +1,27 @@
+2014-05-05 15:50:26,161 [Worker-7] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: leanstartup:leanstartup:0.0.1-SNAPSHOT @ C:\Users\karen\Documents\leanstartup\leanstartup\pom.xml.
+2014-05-05 15:50:27,511 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-05-05 15:50:27,521 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\karen\Documents\leanstartup\leanstartup\src\main\resources
+2014-05-05 15:50:27,521 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-05-05 15:50:27,521 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\karen\Documents\leanstartup\leanstartup\src\test\resources
+2014-05-05 15:50:27,531 [Worker-7] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /leanstartup/src/main/java
+2014-05-05 15:50:27,531 [Worker-7] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /leanstartup/src/test/java
+2014-05-05 15:50:27,621 [Worker-7] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2014-05-05 15:50:27,641 [Worker-7] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: leanstartup:leanstartup:0.0.1-SNAPSHOT @ C:\Users\karen\Documents\leanstartup\leanstartup\pom.xml.
+2014-05-05 15:50:27,701 [Worker-7] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /leanstartup/src/main/java
+2014-05-05 15:50:27,701 [Worker-7] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /leanstartup/src/test/java
+2014-05-05 15:50:27,761 [Worker-7] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2014-05-05 15:50:28,551 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-05-05 15:50:28,561 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\karen\Documents\leanstartup\leanstartup\src\main\resources
+2014-05-05 15:50:28,561 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-05-05 15:50:28,561 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\karen\Documents\leanstartup\leanstartup\src\test\resources
+2014-05-05 15:53:13,019 [Worker-0] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: leanstartup:leanstartup:0.0.1-SNAPSHOT @ C:\Users\karen\Documents\leanstartup\leanstartup\pom.xml.
+2014-05-05 15:53:13,069 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-05-05 15:53:13,069 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\karen\Documents\leanstartup\leanstartup\src\main\resources
+2014-05-05 15:53:13,069 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-05-05 15:53:13,079 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\karen\Documents\leanstartup\leanstartup\src\test\resources
+2014-05-05 15:53:27,841 [Worker-1] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\karen\Documents\leanstartup\leanstartup
+2014-05-05 15:53:27,851 [Worker-1] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install
+2014-05-05 15:53:32,767 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-05-05 15:53:32,777 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\karen\Documents\leanstartup\leanstartup\src\main\resources
+2014-05-05 15:53:32,787 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2014-05-05 15:53:32,787 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\karen\Documents\leanstartup\leanstartup\src\test\resources
