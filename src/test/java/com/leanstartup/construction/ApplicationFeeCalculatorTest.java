@@ -16,6 +16,14 @@ public class ApplicationFeeCalculatorTest {
 	}
 	
 	@Test
+	public void testCalculateFeeAbove500000(){
+		
+		BigDecimal feeAcessed = ApplicationFeeCalculator.calculateFee(new BigDecimal("600000"));
+		
+		Assert.assertEquals(new BigDecimal("65000.00"),feeAcessed);
+	}
+	
+	@Test
 	public void testCalculateFeeBelow100000(){
 		
 		BigDecimal feeAcessed = ApplicationFeeCalculator.calculateFee(new BigDecimal("50000"));
