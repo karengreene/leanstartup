@@ -1,37 +1,36 @@
 package com.leanstartup.construction;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ApplicationFeeCalculator {
 
-	private static BigDecimal feeBelowOneHundredThousand = new BigDecimal(".20");
-	private static BigDecimal feeAboveOneHundredThousand = new BigDecimal(".10");
-	private static BigDecimal feeAboveFiveHundredThousand = new BigDecimal(".05");
-	private static BigDecimal oneHundredThousand = new BigDecimal("100000");
-	private static BigDecimal fiveHundredThousand = new BigDecimal("500000");
+	private List<FeeAccessed> feesAccessed;
 	
+	public ApplicationFeeCalculator(List<FeeAccessed> feesAccessed){
+		if (feesAccessed == null){
+			 feesAccessed = new ArrayList<FeeAccessed>();
+		}
+		Collections.sort(feesAccessed);
+		this.feesAccessed = feesAccessed;
+	}
 	
-	public static BigDecimal calculateFee(BigDecimal invoiceAmount){
+	public BigDecimal calculateFee(BigDecimal invoiceAmount){
 		
-		BigDecimal feeAccessed = BigDecimal.ZERO;
+		BigDecimal totalFee = BigDecimal.ZERO;
 		
 		BigDecimal amountRemaining = invoiceAmount;
 		
-		if (amountRemaining.compareTo(fiveHundredThousand) > 0 ){
-			feeAccessed = calculateFee(amountRemaining, fiveHundredThousand, feeAboveFiveHundredThousand, feeAccessed);
-			amountRemaining = fiveHundredThousand;
+		for (FeeAccessed feeAccessed: feesAccessed){
+			if (invoiceAmount.compareTo(feeAccessed.getStartRange()) > 0){
+				totalFee = calculateFee(amountRemaining, feeAccessed.getStartRange(), feeAccessed.getPercentCharged(), totalFee);
+				amountRemaining = feeAccessed.getStartRange();
+			}
 		}
-		if (amountRemaining.compareTo(oneHundredThousand) > 0 ){
-			feeAccessed = calculateFee(amountRemaining, oneHundredThousand, feeAboveOneHundredThousand, feeAccessed);
-			amountRemaining = oneHundredThousand;
-		}
-		
 			
-		feeAccessed  = amountRemaining.multiply(feeBelowOneHundredThousand).add(feeAccessed);
-		
-		
-		
-		return feeAccessed;
+		return totalFee;
 	}
 	
 	private static BigDecimal calculateFee(BigDecimal amount, BigDecimal range, BigDecimal percentCharged, BigDecimal feeAccessed){
