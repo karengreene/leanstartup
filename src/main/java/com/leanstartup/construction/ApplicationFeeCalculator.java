@@ -29,11 +29,24 @@ public class ApplicationFeeCalculator {
 				amountRemaining = feeAccessed.getStartRange();
 			}
 		}
-			
+		
+		
+		return totalFee;
+	}
+
+	public BigDecimal calculateFee(BigDecimal invoiceAmount, BigDecimal costBasis){
+		
+		BigDecimal totalFee = BigDecimal.ZERO;
+		
+		BigDecimal feeForInvoicePlusCostBasis =  calculateFee(invoiceAmount.add(costBasis));
+		BigDecimal feeForCostBasis =  calculateFee(costBasis);
+		
+		totalFee = feeForInvoicePlusCostBasis.subtract(feeForCostBasis);
+					
 		return totalFee;
 	}
 	
-	private static BigDecimal calculateFee(BigDecimal amount, BigDecimal range, BigDecimal percentCharged, BigDecimal feeAccessed){
+	private BigDecimal calculateFee(BigDecimal amount, BigDecimal range, BigDecimal percentCharged, BigDecimal feeAccessed){
 		
 		BigDecimal amountAboveRange = amount.subtract(range);
 		return amountAboveRange.multiply(percentCharged).add(feeAccessed);

@@ -68,4 +68,11 @@ public class ApplicationFeeCalculatorTest {
 		
 		Assert.assertEquals(new BigDecimal("20000.00"),feeAcessed);
 	}
+	
+	@Test 
+	public void testCalculateFeeAt200000WithCostBasis() {
+		BigDecimal feeAcessed = feeCalculator.calculateFee(new BigDecimal("200000"), new BigDecimal("400000"));
+		
+		Assert.assertEquals(new BigDecimal("15000.00"),feeAcessed);
+	}
 }
