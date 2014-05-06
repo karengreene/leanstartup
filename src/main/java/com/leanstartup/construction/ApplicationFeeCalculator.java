@@ -1,27 +1,44 @@
 package com.leanstartup.construction;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ApplicationFeeCalculator {
 
-	private static BigDecimal feeBelowOneHundredThousand = new BigDecimal(".20");
-	private static BigDecimal feeAboveOneHundredThousand = new BigDecimal(".10");
-	private static BigDecimal oneHundredThousand = new BigDecimal("100000");
+	private List<FeeAccessed> feesAccessed;
 	
-	public static BigDecimal calculateFee(BigDecimal invoiceAmount){
-		
-		BigDecimal feeAccessed = null;
-		
-		if (invoiceAmount.compareTo(oneHundredThousand) > 0 ){
-			BigDecimal amountAboveOneHundredThousand = invoiceAmount.subtract(oneHundredThousand);
-			BigDecimal amountChargedOverOneHundredThousand  = amountAboveOneHundredThousand.multiply(feeAboveOneHundredThousand);
-			feeAccessed = oneHundredThousand.multiply(feeBelowOneHundredThousand).add(amountChargedOverOneHundredThousand);
+	public ApplicationFeeCalculator(List<FeeAccessed> feesAccessed){
+		if (feesAccessed == null){
+			 feesAccessed = new ArrayList<FeeAccessed>();
 		}
-		else{
-			feeAccessed = invoiceAmount.multiply(feeBelowOneHundredThousand);
-		}
-		
-		
-		return feeAccessed;
+		Collections.sort(feesAccessed);
+		this.feesAccessed = feesAccessed;
 	}
+	
+	public BigDecimal calculateFee(BigDecimal invoiceAmount){
+		
+		BigDecimal totalFee = BigDecimal.ZERO;
+		
+		BigDecimal amountRemaining = invoiceAmount;
+		
+		for (FeeAccessed feeAccessed: feesAccessed){
+			if (invoiceAmount.compareTo(feeAccessed.getStartRange()) > 0){
+				totalFee = calculateFee(amountRemaining, feeAccessed.getStartRange(), feeAccessed.getPercentCharged(), totalFee);
+				amountRemaining = feeAccessed.getStartRange();
+			}
+		}
+			
+		return totalFee;
+	}
+	
+	private static BigDecimal calculateFee(BigDecimal amount, BigDecimal range, BigDecimal percentCharged, BigDecimal feeAccessed){
+		
+		BigDecimal amountAboveRange = amount.subtract(range);
+		return amountAboveRange.multiply(percentCharged).add(feeAccessed);
+		
+	}
+	
+	
 }
